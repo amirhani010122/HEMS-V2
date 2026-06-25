@@ -1,0 +1,41 @@
+# ── إعدادات المستخدم (نفس حساب التطبيق) ──
+user:
+  email: "amir@test.com"
+  password: "1234567"
+
+# ── إعدادات الباك-إند ──
+backend:
+  base_url: "http://localhost:8000/api/v1"
+
+# ── إعدادات المحاكاة ──
+simulation:
+  telemetry_interval: 2      # ثواني بين كل إرسال
+  heartbeat_interval: 30     # ثواني بين كل نبض
+  plan_check_interval: 5     # ثواني بين كل فحص للباقة
+
+# ── الأجهزة الـ 5 ──
+devices:
+  - id: "sim-meter"
+    name: "Smart Meter"
+    type: "meter"
+    location: "Main Panel"
+    
+  - id: "sim-ac"
+    name: "Air Conditioner"
+    type: "meter"
+    location: "Living Room"
+    
+  - id: "sim-fridge"
+    name: "Refrigerator"
+    type: "meter"
+    location: "Kitchen"
+    
+  - id: "sim-heater"
+    name: "Water Heater"
+    type: "meter"
+    location: "Bathroom"
+    
+  - id: "sim-light"
+    name: "Lighting"
+    type: "meter"
+    location: "Whole House"
