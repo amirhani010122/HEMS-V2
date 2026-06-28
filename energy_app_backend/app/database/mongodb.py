@@ -18,7 +18,12 @@ async def connect_to_mongo():
     """Connect to MongoDB."""
     logger.info(f"Connecting to MongoDB: {settings.MONGODB_URL}")
 
-    # الرابط المباشر للمونجو الداخلي في ريلواي
+#     # الرابط المباشر للمونجو الداخلي في ريلواي
+# url_direct = "mongodb://mongo:luFjsELLtZup1JsQ@mongodb.railway.internal:27017/?authSource=admin"
+
+# db.client = AsyncIOMotorClient(url_direct)
+# db.db = db.client["hems_db"]
+    # الرابط المباشر المؤمن للمونجو الداخلي في ريلواي
 url_direct = "mongodb://mongo:luFjsELLtZup1JsQ@mongodb.railway.internal:27017/?authSource=admin"
 
 db.client = AsyncIOMotorClient(url_direct)
