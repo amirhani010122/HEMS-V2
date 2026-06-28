@@ -516,7 +516,9 @@ async def _current_subscription_consumption(user_id: str, subscription_id: str, 
     ).to_list()
     return sum(r.consumption_value for r in records)
 
-
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host=settings.HOST, port=settings.PORT, log_level=settings.LOG_LEVEL.lower())
+    import os
+    # هيقرا البورت اللي ريلواي بيفرضه أوتوماتيك، ولو مش موجود (لوكال) هيشتغل على 8000
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run("app.main:app", host="0.0.0.0", port=port)
