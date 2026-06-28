@@ -16,12 +16,14 @@ db = Database()
 
 async def connect_to_mongo():
     """Connect to MongoDB."""
-    # الرابط المباشر المؤمن للمونجو الداخلي في ريلواي
-    url_direct = "mongodb://mongo:luFjsELLtZup1JsQ@mongodb.railway.internal:27017/?authSource=admin"
+    import os
+
+    # 1. ريلواي بيوفر المتغير ده جاهز ومكتمل في السيرفس الداخلية للمونجو
+    # 2. لو مش موجود (لوكال مثلاً)، هيقرا المتغير التاني أو اللوكال هيرجع للـ default
+    url_direct = os.getenv("MONGO_URL") or os.getenv("MONGODB_URL") or "mongodb://localhost:27017"
 
     logger.info(f"Connecting to MongoDB: {url_direct}")
 
-    # تم ضبط المحاذاة والمسافات هنا لتكون داخل الدالة بشكل صحيح
     db.client = AsyncIOMotorClient(url_direct)
     db.db = db.client["hems_db"]
 
