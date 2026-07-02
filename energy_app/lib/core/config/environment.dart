@@ -1,16 +1,18 @@
 enum Environment { development, staging, production }
 
 class EnvironmentConfig {
-  static const Environment _currentEnvironment = Environment.development;
+  // تم تغيير البيئة هنا إلى production ليعتمد التطبيق الرابط السحابي
+  static const Environment _currentEnvironment = Environment.production;
 
   static String get baseUrl {
     switch (_currentEnvironment) {
       case Environment.development:
-        return 'http://localhost:8000/api/v1';
+        return 'http://0.0.0.0:8000/api/v1';
       case Environment.staging:
         return 'https://staging-api.energyiq.com/api/v1';
       case Environment.production:
-        return 'https://api.energyiq.com/api/v1';
+      // تم وضع رابط سيرفر ريلواي الخاص بك مع مسار الـ API المعتاد
+        return 'https://hems-v2-production.up.railway.app/api/v1';
     }
   }
 
