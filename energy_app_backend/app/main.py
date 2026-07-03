@@ -49,9 +49,9 @@ async def seed_default_plans():
     if await Plan.count() > 0:
         return
     seeds = [
-        ("Basic", "basic", 9.99, 300.0, 5),
-        ("Pro", "pro", 24.99, 800.0, 20),
-        ("Enterprise", "enterprise", 79.99, 2000.0, 100),
+        ("Basic", "basic", 9.99, 20.0, 5),
+        ("Pro", "pro", 24.99, 50.0, 20),
+        ("Enterprise", "enterprise", 79.99, 100.0, 100),
     ]
     for name, tier, cost, quota, max_devices in seeds:
         plan = Plan(
