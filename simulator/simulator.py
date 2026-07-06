@@ -14,7 +14,7 @@ import httpx
 # ═══════════════════════════════════════════════════════════
 # CONFIG
 # ═══════════════════════════════════════════════════════════
-BASE_URL = "http://localhost:8000/api/v1"
+BASE_URL = "https://hems-v2-production.up.railway.app/api/v1"
 EMAIL = "amir@test.com"
 PASSWORD = "1234567"
 
